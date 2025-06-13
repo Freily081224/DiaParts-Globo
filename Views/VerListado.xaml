@@ -1,0 +1,31 @@
+﻿<Window x:Class="DiaParts_Globo.Views.VerListado"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DiaParts_Globo.Views"
+        mc:Ignorable="d"
+        Title="Listado de Partes" Height="450" Width="800" Icon="/DiaParts globo.png" ResizeMode="CanMinimize">
+    <Grid Margin="10" Background="#FF9C8728">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Listado de Partes" FontSize="20" FontWeight="Bold" Margin="0,0,0,10" Foreground="White" Background="#FF1F265D"/>
+
+        <DataGrid x:Name="dgPartes" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,36,0,0" Grid.RowSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*"/>
+                <DataGridTextColumn Header="Número de Parte" Binding="{Binding NumeroParte}" Width="*"/>
+                <DataGridTextColumn Header="Modelo" Binding="{Binding Modelo}" Width="*"/>
+                <DataGridTextColumn Header="Imagen" Binding="{Binding ImagenPath}" Width="2*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Grid.Row="2" Content="Imprimir / Exportar" Click="BtnImprimir_Click" Height="30" HorizontalAlignment="Right" Width="150" Background="#FF116C8A" Foreground="White"/>
+        <Button Content="Exportar" Click="BtnExportar_Click" Width="120" Background="DarkBlue" Foreground="White" Margin="10,315,650,6" Grid.Row="1"/>
+
+    </Grid>
+</Window>
